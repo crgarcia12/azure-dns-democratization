@@ -28,9 +28,9 @@ First important thing to understand, is how does the resolver affects the standa
 >1. If no match is found, no DNS forwarding occurs and Azure DNS is used to resolve the query.
 
 Based on that:
-1. The on-prem forwarder, forwards all queries to the Hub Resolver
-1. The Hub Resolver has a ruleset that delegates the domain resolution to the Spoke resolver
-1. The spoke VNet resoles using the Default Azure DNS, specified above. Private DNS zones will be considered to do the resolution
+1. The on-prem forwarder, forwards all `*.eu.azure.crgar.net` queries to the Hub Resolver
+1. The Hub Resolver has rulesets that delegates to the Spoke resolver based on the subdomain. Ex: `*.spoke1.eu.azure.crgar.net`
+1. The spoke VNet resolves using the Default Azure DNS. Private DNS zones will be considered at resolution time.
 ## Benefits
 * On-prem DNS does not need any changes once initial set-up is done
 * Support for auto registration of VMs
