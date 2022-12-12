@@ -15,7 +15,7 @@ This repository experiments with the idea of giving Application Teams the autono
 ![Private resolver architecture](readme-media/private-resolver-architecture.png)
 
 ## Explanation
-First important thing to understand, is how does the resolver affects the standard DNS resolution in an Azure Vnet:
+First, let's understand how the DNS resolution happens on an Azure VNet with a resolver:
 
 >A client in a virtual network issues a DNS query.
 >1. If the DNS servers for this virtual network are specified as custom, then the query is forwarded to the specified IP addresses.
